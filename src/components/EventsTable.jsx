@@ -6,6 +6,16 @@ import { Cover } from "./ui/Cover";
 import { Button } from "./ui/MovingBorder";
 import Background from "./rotateStar";
 
+// Helper function to format date
+const formatDate = (date) => {
+  const eventDate = new Date(date);
+  const day = String(eventDate.getDate()).padStart(2, "0"); // Ensure two-digit day
+  const month = String(eventDate.getMonth() + 1).padStart(2, "0"); // Ensure two-digit month
+  const year = eventDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+};
+
 const EventsTable = ({ session }) => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
@@ -43,7 +53,6 @@ const EventsTable = ({ session }) => {
 
   const handleFilter = () => {
     if (startDate) {
-      // Filter events only by the start date, ignoring the end date
       const filtered = events.filter((event) => {
         const eventStartDate = new Date(event.start.dateTime || event.start.date);
         const eventStartDateStr = eventStartDate.toISOString().split('T')[0]; // Format to 'YYYY-MM-DD'
@@ -218,27 +227,34 @@ const EventsTable = ({ session }) => {
                         <td className="lg:py-3 lg:px-4 py-2 px-2 font-medium text-gray-100">
                           {event.summary}
                         </td>
-                        <td className="py-2 px-2 text-gray-300">
-                          {eventStart.toLocaleDateString()}
+                        <td className="py-3 px-4 text-gray-300">
+                          {formatDate(event.start.dateTime || event.start.date)}
                         </td>
-                        <td className="py-2 px-2 text-gray-300">
-                          {eventStart.toLocaleTimeString()}
+                        <td className="py-3 px-4 text-gray-300">
+                          {eventStart.toLocaleTimeString([], {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
                         </td>
-                        <td className="py-2 px-2 text-gray-300">
+                        <td className="py-3 px-4 text-gray-300">
                           {event.location || "No Location"}
                         </td>
                       </motion.tr>
                     );
                   })
                 ) : (
-                  <tr>
+                  <motion.tr
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <td
                       colSpan={4}
-                      className="py-3 px-4 text-center text-gray-400"
+                      className="py-3 px-4 text-center text-gray-300"
                     >
-                      No events found for the selected date
+                      No events found
                     </td>
-                  </tr>
+                  </motion.tr>
                 )}
               </tbody>
             </table>
