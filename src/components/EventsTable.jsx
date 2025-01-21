@@ -265,4 +265,5 @@ const EventsTable = ({ session }) => {
   );
 };
 
+
 export default EventsTable;
