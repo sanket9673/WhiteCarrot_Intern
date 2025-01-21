@@ -42,7 +42,7 @@ To run the **WhiteCarrot_Intern** website locally, please follow these steps:
 
 This project is a web application designed to integrate with Google Calendar, allowing users to log in via Single Sign-On (SSO) using Google, view their calendar events, and filter those events by date. The application is built with a focus on ease of use and flexibility, offering users a simple and intuitive interface to manage and view their Google Calendar events.
 
-## Key Technologies
+## Technologies Used
 
 - **HTML5:** The foundation of the web application, HTML5 structures the content and provides a semantic layout, enhancing accessibility and SEO for a more user-friendly platform.
 
@@ -52,13 +52,13 @@ This project is a web application designed to integrate with Google Calendar, al
 
 - **React.js:** A powerful JavaScript library for building fast and dynamic user interfaces. React's component-based architecture allows for reusable code, improving efficiency and maintainability while ensuring high performance across the platform.
 
-- **React Router:** A declarative routing library for React that enables smooth navigation between views without reloading the page. This improves user experience by maintaining state and providing quick transitions between different sections of the app.
-
 - **Supabase:** A backend-as-a-service platform that provides real-time data management, authentication (SSO), and database solutions. Supabase integrates seamlessly with the frontend, handling user authentication and data storage while simplifying backend development.
 
 - **SSO Google Authentication:** A secure Single Sign-On (SSO) solution that allows users to authenticate using their Google accounts. This integration simplifies the login process, enhances security, and provides a seamless user experience for accessing the platform.
 
 - **React Prebuilt Libraries:** A collection of prebuilt libraries used to accelerate development. These libraries offer ready-to-use components and functionalities, reducing development time and ensuring consistent, high-quality features across the platform.
+
+- **Vercel**: A cloud platform for frontend frameworks and static sites, Vercel offers seamless deployment and optimization. It automates the build process and provides fast, scalable hosting, ensuring that the platform loads quickly and efficiently for all users.
 
 ## Key Features
 
