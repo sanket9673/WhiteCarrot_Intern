@@ -90,7 +90,7 @@ export function ShootingStarsDemo({ googleSignIn }) {
         <div className="flex justify-center">
           <TextHoverEffect text="WhiteCarrot.io" />
         </div>
-        <p className="lg:mt-[-130px] mt-[-50px] font-normal text-3xl text-neutral-300 max-w-lg text-center mx-auto">
+        <p className="lg:mt-[-130px] mt-[-30px] font-normal text-3xl text-neutral-300 max-w-lg text-center mx-auto">
           Innovation in Every Bite.
         </p>
         <div className="flex justify-center mt-[50px]">
